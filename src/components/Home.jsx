@@ -1,79 +1,99 @@
+import { Box, Container, Heading, Img, Stack, Text } from '@chakra-ui/react'
 import React from 'react'
-import {AiFillGoogleCircle,AiFillAmazonCircle,AiFillYoutube,AiFillInstagram} from 'react-icons/ai'
-import vg from '../assets/2.jpg'
+import { Carousel } from 'react-responsive-carousel'
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import img1 from '../assets/1.jpg'
+import img2 from '../assets/2.jpg'
+import img3 from '../assets/3.jpg'
+import img4 from '../assets/4.jpg'
+import img5 from '../assets/5.jpg'
+
+const headingOptions = {
+  pos: 'absolute',
+  left: '50%',
+  top: '50%',
+  trasform: 'translate (-50%,-50%)',
+  textTransform: 'uppercase',
+  p: '4',
+  size: '4xl'
+};
 
 const Home = () => {
-    return (
-        <>
-            <div className='home' id='home'>
-                <main>
-                    <h1>Tech Bazar</h1>
-                    <p>Solution To all Your Problems</p>
-                </main>
-            </div>
+  return (
+    <Box>
+      <MyCarousel />
+      <Container maxW={"container.xl"} minH={"100vh"} p="16">
+        <Heading
+          textTransform={'uppercase'}
+          py={"2"}
+          w={'fit-content'}
+          borderBottom={'2px solid'}
+          m={'auto'}
+        >
+          Services
+        </Heading>
 
-            <div className='home2'>
-                <img src={vg} alt='Graphics' />
-                <div>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti doloremque minus suscipit magnam, iusto assumenda saepe architecto dolores sapiente, nam ut ea consequuntur est ex tempora illum sint fugit ab?
-                    </p>
-                </div>
+        <Stack
+        h={"full"}
+        p={"4"}
+        alignItems={"center"}
+        direction={["column","row"]}
+        >
+          <Img src={img1} h={["40","400"]}filter={'hue-rotate(-130deg)'}/>
+          <Text letterSpacing={"widest"} lineHeight={"190%"} p={["4","16"]} textAlign={"center"}>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur cum officia labore obcaecati a, incidunt quo dolorem itaque saepe similique voluptatibus corrupti, id maiores temporibus, ad dolores ipsum illum ullam.
+          </Text>
+        </Stack>
+      </Container>
+    </Box>
+  );
+};
 
-            </div>
+const MyCarousel = () => (
+  <Carousel
+    autoPlay
+    infiniteLoop
+    interval={1000}
+    showStatus={false}
+    showThumbs={false}
+    showArrows={false} >
 
-            <div className="home3" id='about'>
-                <div>
-                    <h1>Who we are ?</h1>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet ad voluptatem officiis nobis et, nesciunt veniam? Eaque nihil vitae optio facere incidunt nesciunt debitis voluptas ipsum fugit autem ducimus nam magnam quod dolorum ex assumenda aut, dignissimos in dolor maxime totam quibusdam ut, tempora molestias? Repudiandae, expedita quia architecto autem dolores quasi, saepe asperiores esse sint, omnis quaerat laborum! Illum dolorum ipsum vitae eveniet!</p>
-                </div>
-            </div>
+    <Box w={'full'} h={'100vh'}>
+      <Img src={img1} />
+      <Heading bg={"blackAlpha.600"} color={"white"} {...headingOptions}>
+        Watch The Future
+      </Heading>
+    </Box>
 
-            <div className="home4" id='brands'>
-                <div>
-                    <h1>Brands</h1>
-                    <article>
-                        <div
-                        style={{
-                            animationDelay:"0.3s"
-                        }}>
-                    <AiFillGoogleCircle/>
-                    <p>Google</p>
-                    </div>
+    <Box w={'full'} h={'100vh'}>
+      <Img src={img2} />
+      <Heading bg={"blackAlpha.600"} color={"white"} {...headingOptions}>
+        Game is  The Future
+      </Heading>
+    </Box>
 
-                        <div
-                        style={{
-                            animationDelay:"0.5s"
-                        }}>
-                     <AiFillAmazonCircle/>
-                    <p>Amazon</p>
-                    </div>
+    <Box w={'full'} h={'100vh'}>
+      <Img src={img3} />
+      <Heading bg={"blackAlpha.600"} color={"white"} {...headingOptions}>
+        Gaming on Console
+      </Heading>
+    </Box>
 
-                        <div
-                        style={{
-                            animationDelay:"0.7s"
-                        }}>
-                     <AiFillYoutube/>
-                    <p>Youtube</p>
-                    </div>
+    <Box w={'full'} h={'100vh'}>
+      <Img src={img4} />
+      <Heading bg={"blackAlpha.600"} color={"white"} {...headingOptions}>
+        Night Life Is Cool
+      </Heading>
+    </Box>
 
-                        <div
-                        style={{
-                            animationDelay:"1s"
-                        }}>
-                      <AiFillInstagram/>
-                    <p>Instagram</p>
-                    </div>
-                    
-                   
-                  
-                  
-                       
-                    </article>
-                </div>
-            </div>
-        </>
-    )
-}
+    <Box w={'full'} h={'100vh'}>
+      <Img src={img5} />
+      <Heading bg={"whiteAlpha.600"} color={"black"} {...headingOptions}>
+        Game is  The Future
+      </Heading>
+    </Box>
+  </Carousel>
+)
+
 
 export default Home
